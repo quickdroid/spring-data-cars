@@ -1,6 +1,8 @@
 package com.cars.mike.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Date;
@@ -9,7 +11,9 @@ import java.util.List;
 @Entity
 public class Brand extends BaseModel {
 
+    @NotNull
     private String name;
+    @NotNull
     private BigDecimal yearlyTurnover;
     private Date creationDate;
     private Boolean active;

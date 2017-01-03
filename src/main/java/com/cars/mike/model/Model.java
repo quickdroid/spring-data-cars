@@ -1,14 +1,20 @@
 package com.cars.mike.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 
 @Entity
 public class Model extends BaseModel {
 
+    @NotNull
     private String name;
     private BigDecimal price;
+    @NotNull
+    @Min(0)
     private Short speed;
+    @NotNull
     private String engineType;
 
     @ManyToOne

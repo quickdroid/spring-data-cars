@@ -1,14 +1,18 @@
 package com.cars.mike.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 public class Location extends BaseModel {
 
+    @NotNull
     private String state;
+    @NotNull
     private String country;
+    @NotNull
     private String postCode;
 
     @OneToMany(cascade = CascadeType.ALL)
